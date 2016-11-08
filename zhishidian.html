@@ -35,3 +35,107 @@ fatal: 当前分支 master 没有对应的上游分支。
     git push --set-upstream origin master
 
 liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git push --set-upstream origin master
+Username for 'https://github.com': richardjoin
+Password for 'https://richardjoin@github.com':
+对象计数中: 6, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (2/2), 完成.
+写入对象中: 100% (6/6), 427 bytes | 0 bytes/s, 完成.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/richardjoin/trygit.git
+ * [new branch]      master -> master
+分支 master 设置为跟踪来自 origin 的远程分支 master。
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git log -p
+commit 6484d93283fcff767c535a86399e70ddb3f4ddc4
+Author: richard <2547900199@qq.com>
+Date:   Tue Nov 8 11:39:22 2016 +0800
+
+    lll
+
+diff --git a/index.html b/index.html
+index ce01362..ffd1ed7 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,2 @@
+ hello
++vvv
+
+commit 7e3639d5534a2ed404d15a55c1fb2bc34c890eb0
+Author: richard <2547900199@qq.com>
+Date:   Tue Nov 8 10:58:41 2016 +0800
+
+    I add index.html
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..ce01362
+--- /dev/null
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ cd ~
+liyang@liyang-pc:~$ ls
+Public  公共  视频  图片  文档  下载  音乐  桌面
+liyang@liyang-pc:~$ ls -a
+.              .config     .gnome2_private  Public         .xinputrc             下载
+..             .cxoffice   .icons           .sample-music  .xsession-errors      音乐
+.atom          .dbus       .local           .Templates     .xsession-errors.old  桌面
+.bash_history  .dmrc       .mozilla         .themes        公共
+.bash_logout   .gconf      .pki             .thunderbird   视频
+.bashrc        .gitconfig  .presage         .viminfo       图片
+.cache         .gnome2     .profile         .Xauthority    文档
+liyang@liyang-pc:~$ vim .gitconfig
+liyang@liyang-pc:~$ cat .gitconfig
+[user]
+	name = richardjoin
+	email = 2547900199@qq.com
+liyang@liyang-pc:~$ ^C
+liyang@liyang-pc:~$ cd 桌面/linux/11-08/trygit
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git diff
+diff --git a/index.html b/index.html
+index ffd1ed7..f9ac3c8 100644
+--- a/index.html
++++ b/index.html
+@@ -1,2 +1,17 @@
+-hello
+-vvv
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <meta http-equiv="X-UA-Compatible" content="ie=edge">
++  <title>Document</title>
++  <style>
++    h1{
++      font-size: 50px;
++    }
++  </style>
++</head>
++<body>
++  <h1>hi,我的哥！</h1>
++</body>
++</html>
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git add .
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git status
+位于分支 master
+您的分支与上游分支 'origin/master' 一致。
+要提交的变更：
+  （使用 "git reset HEAD <文件>..." 以取消暂存）
+
+	修改：     index.html
+	新文件：   zhishidian.html
+
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git commit -m"three"
+[master 24c3ef7] three
+ 2 files changed, 54 insertions(+), 2 deletions(-)
+ create mode 100644 zhishidian.html
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git push
+Username for 'https://github.com': richardjoin
+Password for 'https://richardjoin@github.com':
+对象计数中: 4, 完成.
+Delta compression using up to 4 threads.
+压缩对象中: 100% (4/4), 完成.
+写入对象中: 100% (4/4), 1020 bytes | 0 bytes/s, 完成.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/richardjoin/trygit.git
+   6484d93..24c3ef7  master -> master
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ ^C
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$
