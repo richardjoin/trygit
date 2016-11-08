@@ -1,0 +1,37 @@
+liyang@liyang-pc:~$ cd 桌面/linux/
+liyang@liyang-pc:~/桌面/linux$ cd 11-08/trygit
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git status
+位于分支 master
+无文件要提交，干净的工作区
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git add .
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git status
+位于分支 master
+无文件要提交，干净的工作区
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git add -A
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git status
+位于分支 master
+无文件要提交，干净的工作区
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ ls
+index.html
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git commit -m"first commit"
+位于分支 master
+无文件要提交，干净的工作区
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ atom . index.html
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git push
+fatal: 没有配置推送目标。
+或通过命令行指定 URL，或用下面命令配置一个远程仓库
+
+    git remote add <名称> <地址>
+
+然后使用该远程仓库名执行推送
+
+    git push <名称>
+
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git remote add origin https://github.com/richardjoin/trygit.git
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git push
+fatal: 当前分支 master 没有对应的上游分支。
+为推送当前分支并建立与远程上游的跟踪，使用
+
+    git push --set-upstream origin master
+
+liyang@liyang-pc:~/桌面/linux/11-08/trygit$ git push --set-upstream origin master
